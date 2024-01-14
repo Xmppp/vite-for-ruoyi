@@ -90,8 +90,8 @@ export function addDateRange(params, dateRange, propName) {
  * @param {string} end - 结束时间字段
  * @returns {object}
  */
-export function addDateRange1(params, dateRange, begin, end) {
-  let search = params
+export function addDateRange1(params, dateRange, { begin, end } = propName) {
+  let search = { ...params }
   dateRange = Array.isArray(dateRange) ? dateRange : []
   if (typeof propName === 'undefined') {
     search['beginTime'] = dateRange[0]
